@@ -8,24 +8,27 @@
     <title>Khá rảnh</title>
     <style>
         #body {
-            background-image: url("https://methongthai.org/wp-content/uploads/2019/01/1546510784_Screenshot_2_1546507352_1546510800.png");
+            background-image: url("banh.png");
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
             height: 1000px;
             color: aliceblue;
+            text-align: center;
+            align-items: center
         }
     </style>
 </head>
 
 <body>
-    <div id="body">
-        <div class='container'>
+    <div>
+        <div class='container' id="body">
             <h1>kHá bảnH kEy</h1><br>
             <h4>bộ gõ khá bảnk</h4><br>
             <h6>Khá BảnH, sân chơi giới trẻ</h6>
             <br><br><br>
             <div class="row">
+                <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="input-group mb-3">
                         <input placeholder="Hãy nhập gì đó...." type="text" class="form-control" id="demo"
@@ -36,11 +39,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3"></div>
             </div>
-            <h6>ex: gõ "anh bảnh đẹp try vl >>> output: aNh bảnH đẸp Try vL</h6>
-        </div><br><br><br>
-        <h4>bảnH sẼ tRở lẠi</h4>
-        <h6>.BL</h6>
+            <div id='sound_button' onClick="playpause()"><img title='Music Playing' alt='Play The Music' src='on.png' />
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <h4>bảnH sẼ tRở lẠi</h4>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <h6>BL.</h6>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -78,6 +91,24 @@
 
         window.prompt("Copy bằng cách: Ctrl+C, Enter", sentence);
     }
+</script>
+
+<script type="text/javascript">
+    function playpause() {
+        var snd = document.getElementById("sound");
+        var snd_btn = document.getElementById("sound_button");
+        snd.muted = !snd.muted;
+        if (snd.muted) {
+            snd_btn.innerHTML = "<img alt='Pause The Music' title='Music Paused' src='off.png' />";
+        } else {
+            snd_btn.innerHTML = "<img alt='Play The Music' title='Music Palying' src='on.png' />";
+        }
+    }
+</script>
+<audio autoplay="true" loop="true" width="0" height="0" id="sound" src="999.mp3" type="audio/mp3"></audio>
+<noembed>
+    <bgsound src="music.mp3" loop="infinite" />
+</noembed>
 </script>
 
 </html>
