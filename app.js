@@ -3,7 +3,7 @@ const path = require('path');
 
 let app = express();
 
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, (err) => {
     if (!err) console.log(`server listening at ${PORT}`);
 })
